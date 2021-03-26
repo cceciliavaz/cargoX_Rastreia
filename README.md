@@ -1,6 +1,6 @@
 # [CARGOX CHALLENGE](https://cargox.com.br/) 
 
-![Alt Text](https://github.com/cceciliavaz/D3_CHALLENGE/blob/master/src/assets/img/DESAFIO-D3.gif)
+![Alt Text](https://github.com/cceciliavaz/cargoX_Rastreia/tree/master/src/assets/img/cargoX_Rastreia.gif)
 
 
 **[CARGO X - RASTREIA]** A CargoX - Rastreia te ajuda a acompanhar seus pedidos em tempo real.
@@ -15,9 +15,9 @@
 1. Instale NodeJs de [NodeJs Official Page](https://nodejs.org/en).
 2. Abra o Terminal
 3. Vá para o seu projeto de arquivo
-4. Execute no terminal: ```npm install -g @angular/cli```
-5. Então: ```npm install```
-6. E: ```npm start```
+4. Execute no terminal: ```npm install -g @angular/cli``` ou ```yarn add @angular/cli``` 
+5. Então: ```npm install``` ou ```yarn install``` 
+6. E: ```npm start``` ou ```yarn start```
 7. Navegue para [localhost:4200](localhost:4200)
 
 
