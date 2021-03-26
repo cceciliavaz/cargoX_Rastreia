@@ -156,11 +156,11 @@ argon-design-system-angular
 │   │   │   ├── sections.component.spec.ts
 │   │   │   ├── sections.component.ts
 │   │   │   ├── sections.module.ts
-│   │   │   ├── tabs-section
-│   │   │   │   ├── tabs-section.component.css
-│   │   │   │   ├── tabs-section.component.html
-│   │   │   │   ├── tabs-section.component.spec.ts
-│   │   │   │   └── tabs-section.component.ts
+│   │   │   ├── status-section
+│   │   │   │   ├── status-section.component.css
+│   │   │   │   ├── status-section.component.html
+│   │   │   │   ├── status-section.component.spec.ts
+│   │   │   │   └── status-section.component.ts
 │   │   │   ├── typography-section
 │   │   │   │   ├── typography-section.component.css
 │   │   │   │   ├── typography-section.component.html

@@ -1,0 +1,163 @@
+<div class="container">
+  <h3 class="h4 text-primary font-weight-bold mb-1">
+    {{ dadosCliente?.customer.name }}
+  </h3>
+  <small>ID do cliente: {{ dadosCliente?.customer.id }}</small>
+  <div class="row mt-4">
+    <div class="col-xl-8 col-md-8 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-6 col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 pb-2">
+                  <label class="card-text">
+                    <i class="fa fa-barcode mr-1"></i><b>ID do frete Cargo X: </b><br/>
+                    <span class="ml-3"> {{ dadosCliente?.id }}</span>
+                    </label>
+                </div>
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-barcode mr-1"></i><b>Nº de pedido do cliente </b><br/>
+                    <span class="ml-3"> {{ dadosCliente?.customer_tracking_number }}</span>
+                    </label>
+                </div>
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-id-card mr-1"></i><b>Motorista </b><br/>
+                    <span class="ml-3 text-uppercase"> {{ dadosCliente?.trucker.name.replace('\/n','') }}</span>
+                    </label>
+                </div>
+
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-phone mr-1"></i><b>Telefone </b><br/>
+                    <span class="ml-3 ">+{{dadosCliente?.trucker.phone | slice:0:2}}
+                       ({{ dadosCliente?.trucker.phone | slice:2:4}})
+                      {{ dadosCliente?.trucker.phone | slice:4:8}}
+                      -{{ dadosCliente?.trucker.phone | slice:8:12}}
+                    </span>                    
+                    </label>
+                </div>
+
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-mobile mr-1"></i><b>Motorista </b><br/>
+                    <span> 
+                      <ul class="mb-0">
+                        <li>Acesso {{ dadosCliente?.trucker.last_app_open_at |  date: 'dd/MM/yyyy' }}</li>
+                        <li>GPS atualizado {{ dadosCliente?.trucker.last_app_position_at |  date: 'dd/MM/yyyy' }}</li>
+                        <li>Primeiro acesso em {{ dadosCliente?.trucker.first_login_at |  date: 'dd/MM/yyyy' }}</li>
+                        <li>Versão {{ dadosCliente?.trucker.app_version  }}</li>
+                      </ul>
+                    </span>
+                    </label>
+                </div>
+
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-truck mr-1"></i><b>Veículo </b><br/>
+                    <container *ngFor="let row of dadosCliente?.trucks; index i">
+                      <span class="ml-3"> {{ row.type.name }}</span><br *ngIf="i != dadosCliente?.trucks.lenght -1"/>
+                    </container>
+                    </label>
+                </div>
+                
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-map-marker mr-1"></i><b>Origem </b><br/>
+                    <span class="ml-3 text-uppercase"> {{ dadosCliente?.origin.address }},  {{ dadosCliente?.origin.number }} <br> </span>
+                    <span class="ml-3 text-uppercase">  {{ dadosCliente?.origin.city }} - {{ dadosCliente?.origin.state }} - CEP: {{ dadosCliente?.origin.zip_code }}</span>
+                    </label>
+                </div>
+
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-map mr-1"></i><b>Destino </b><br/>
+                    <span class="ml-3 text-uppercase"> {{ dadosCliente?.destination.address }},  {{ dadosCliente?.destination.number }} <br> </span>
+                    <span class="ml-3 text-uppercase">  {{ dadosCliente?.destination.city }} - {{ dadosCliente?.destination.state }} - CEP: {{ dadosCliente?.destination.zip_code }}</span>
+                    </label>
+                </div>
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-user mr-1"></i><b>Operação </b><br/>
+                    <span class="ml-3 text-uppercase"> {{ dadosCliente?.trucker_seeker.name }}</span>
+                    </label>
+                </div>
+                
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-user-circle mr-1"></i><b>Venda </b><br/>
+                    <span class="ml-3 text-uppercase"> {{ dadosCliente?.salesperson.name }}</span>
+                    </label>
+                </div>
+                
+              </div>
+            </div>
+            
+            <div class="col-xl-6 col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-calendar mr-1"></i><b>Coleta Agendada </b><br/>  
+                    <span class="ml-3">{{ ajustaData(dadosCliente?.pickup_date)}}</span><br/> <br/> 
+                    <i class="ml-3"></i><b>Entrega Agendada <i class="fa  fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="Atenção"></i> </b><br/> 
+                    <span class="ml-3">{{ ajustaData(dadosCliente?.delivery_date)}}</span> <br/> <br/>
+                    <i class="ml-3"></i><b>Entrega Calculada  <i class="fa  fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="Atenção"></i>  </b><br/> 
+                    <span class="ml-3">{{ ajustaData(dadosCliente?.estimated_time_of_arrival)}}</span> <br/> <br/>
+                    <i class="ml-3"></i><b>Entrega Manual  <i class="fa  fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="Atenção"></i>  </b><br/> 
+                    <span class="ml-3">{{ ajustaData(dadosCliente?.manual_input_estimated_time_of_arrival)}}</span>
+                  </label>
+                </div>  
+
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-file mr-1"></i><b>Documentos </b><br/>  <span class="ml-3"> 
+                        <container *ngFor="let row of dadosCliente?.documents; index i">
+                        <button class="btn btn-sm  ml-1" type="button" style="font-size: 10px;" [ngClass]="row.status ? 'btn-success' : ''">   {{ row.name }}</button>
+                      </container>
+                    </span>
+                  </label>
+                </div>  
+
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-money mr-1"></i><b>Pagamentos </b><br/>  <span class="ml-3"> 
+                        <container *ngFor="let row of dadosCliente?.payments">
+                        <button class="btn btn-sm  ml-1" type="button" style="font-size: 10px;" [ngClass]="row.status != 'not_ok' ? 'btn-success' : ''">   {{ row.name }}</button>
+                      </container>
+                    </span>
+                  </label>
+                </div>          
+                
+                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
+                  <label class="card-text">
+                    <i class="fa fa-money mr-1"></i><b>Status </b> <span class="ml-3"> 
+                        <container *ngFor="let row of dadosCliente?.status_history">
+                          <ul class="timeline">
+                            <li  [ngClass]="row.status == 1 ? 'success' : row.status == 2 ? 'wait' : ''" >
+                             <span class="bold">{{row.translation}}</span>
+                              <p class="card-text">{{ajustaData(row.at)}}</p>
+                            </li>
+                          </ul>
+                      </container>
+                    </span>
+                  </label>
+                </div>  
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

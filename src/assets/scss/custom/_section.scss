@@ -1,6 +1,6 @@
 .section {
     position: relative;
-    padding-top: $spacer * 4;
+    padding-top: $spacer * 1;
     padding-bottom: $spacer * 4;
 }
 
@@ -22,7 +22,7 @@
 // Hero sections
 .section-hero {
     @include media-breakpoint-up(md) {
-        min-height: 500px;
+        min-height: auto;
     }
 }
 
