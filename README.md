@@ -1,6 +1,6 @@
 # [CARGOX CHALLENGE](https://cargox.com.br/) 
 
-![Alt Text](https://github.com/cceciliavaz/cargoX_Rastreia/tree/master/src/assets/img/cargoX_Rastreia.gif)
+![Alt Text](https://github.com/cceciliavaz/cargoX_Rastreia/blob/master/src/assets/img/cargoX_Rastreia.gif)
 
 
 **[CARGO X - RASTREIA]** A CargoX - Rastreia te ajuda a acompanhar seus pedidos em tempo real.
