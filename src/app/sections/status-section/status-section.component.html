@@ -160,21 +160,18 @@
       </div>
     </div>
     
-    <div class="col-xl-4 col-md-4 col-sm-12">
+    <div class="col-xl-4 col-md-4 col-sm-12 text-center justify-content-center">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body p-1">
           <div class="row">
-            
-            <div class="col-xl-6 col-md-6 col-sm-12">
-              <div class="row">
-                <div class="col-xl-12 col-md-12 col-sm-12 py-2">
-                  <div *ngIf="apiLoaded | async">
-               
-                  </div>
+                <div class="col-xl-12 mt-2 col-md-12 col-sm-12">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2259566.5722871907!2d-46.340237373649444!3d-21.544607578851874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x94cec9c07e240def%3A0x98e4253010cf94d9!2sBragan%C3%A7a%20Paulista%20-%20SP%2C%2012900!3m2!1d-22.9633927!2d-46.536723699999996!4m5!1s0xa6957cb3a77693%3A0xcf74bcd698c15687!2sAv.%20S%C3%B3crates%20Mariani%20Bitencourt%20-%20Cinco%2C%20Contagem%20-%20MG!3m2!1d-19.9423247!2d-44.067002099999996!5e0!3m2!1spt-BR!2sbr!4v1616788435679!5m2!1spt-BR!2sbr" 
+                  height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="col-xl-12 col-md-12 col-sm-12 pr-4">
+                 <span class="card-text">Última atualização: {{ dadosCliente?.trucker.last_app_position_at |  date: 'dd/MM/yyyy' }}</span> 
                 </div>  
                 
-              </div>
-            </div>
           </div>
         </div>
       </div>
