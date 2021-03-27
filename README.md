@@ -1,4 +1,4 @@
-# [CARGOX CHALLENGE](https://cargox.com.br/) 
+# [CARGOX RASTREIA](https://cargox.com.br/) 
 
 ![Alt Text](https://github.com/cceciliavaz/cargoX_Rastreia/blob/master/src/assets/img/cargoX_Rastreia.gif)
 
